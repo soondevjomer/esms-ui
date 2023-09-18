@@ -1,0 +1,27 @@
+<!-- show assessment detail -->
+<ng-container [formGroup]="assessmentForm">
+
+  <app-input
+    [customErrorMessages]="{ required: 'This name field is required' }"
+    label="Title"
+    id="'title'"
+    placeholder="title"
+    formControlName="title"
+  ></app-input>
+
+  <app-select
+    [customErrorMessages]="{ required: 'This name field is required' }"
+    label="Assessment Type"
+    id="assessmentType"
+    formControlName="assessmentType"
+    [options]="assessmentTypes"
+    [optionLabelProperty]="'name'"
+    >
+  </app-select>
+
+  <button (click)="onSubmit()">Submit</button>
+</ng-container>
+
+<pre class="text-sm">
+    {{ assessmentForm.value | json }}
+</pre>

@@ -1,0 +1,19 @@
+<div *ngIf="control">
+  <label [for]="id">
+    {{ label }} <span *ngIf="isRequired" class="text-red-500">*</span>
+  </label>
+  <select
+    [id]="id"
+    [formControl]="control">
+    <option
+      *ngFor="let option of options"
+      [ngValue]="option">
+      {{ option[optionLabelProperty] }}
+    </option>
+  </select>
+
+  <app-validation-errors
+    [errors]="control.errors"
+    [customErrorMessages]="customErrorMessages"
+  ></app-validation-errors>
+</div>

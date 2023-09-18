@@ -1,0 +1,7 @@
+<ul>
+  <li 
+    class="text-red-500"
+    *ngFor="let error of errors | keyvalue">
+    {{ errorMessages[error.key] }}
+  </li>
+</ul>
